@@ -1,6 +1,6 @@
 pkgname='miladi-live-service'
-pkgver=20241001
-pkgrel=2
+pkgver=20241002
+pkgrel=1
 pkgdesc="Miladi Linux live session"
 arch=('any')
 url="https://github.com/yuki/miladi-live-service.git"
@@ -18,12 +18,4 @@ package() {
     if [ -d "${InternalDir}/usr" ]; then
         cp -r "${InternalDir}/usr" "${pkgdir}/"
     fi
-}
-
-post_install() {
-    systemctl enable miladi-live
-}
-
-pre_remove() {
-    systemctl disable miladi-live
 }

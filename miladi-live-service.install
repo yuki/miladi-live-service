@@ -1,0 +1,9 @@
+post_install() {
+    echo 'Enabling miladi-live.service'
+    systemctl enable miladi-live
+}
+
+pre_remove() {
+    echo 'Disabling miladi-live.service'
+    systemctl disable miladi-live
+}
