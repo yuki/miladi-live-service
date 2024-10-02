@@ -19,3 +19,11 @@ package() {
         cp -r "${InternalDir}/usr" "${pkgdir}/"
     fi
 }
+
+post_install() {
+    systemctl enable miladi-live
+}
+
+pre_remove() {
+    systemctl disable miladi-live
+}
