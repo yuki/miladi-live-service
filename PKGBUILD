@@ -1,6 +1,6 @@
 pkgname='miladi-live-service'
 pkgver=20241001
-pkgrel=1
+pkgrel=2
 pkgdesc="Miladi Linux live session"
 arch=('any')
 url="https://github.com/yuki/miladi-live-service.git"
@@ -17,13 +17,5 @@ package() {
     # Copy files
     if [ -d "${InternalDir}/usr" ]; then
         cp -r "${InternalDir}/usr" "${pkgdir}/"
-    fi
-
-    if [ -d "${InternalDir}/etc" ]; then
-        cp -r "${InternalDir}/etc" "${pkgdir}/"
-    fi
-
-    if [ -d "${InternalDir}/lib" ]; then
-        cp -r "${InternalDir}/lib" "${pkgdir}/"
     fi
 }
