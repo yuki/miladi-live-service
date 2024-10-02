@@ -1,0 +1,10 @@
+[Unit]
+Description=Miladi LiveCD Config Script
+Before=systemd-user-sessions.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/miladi-live
+
+[Install]
+WantedBy=multi-user.target

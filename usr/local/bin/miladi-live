@@ -1,0 +1,14 @@
+#!/bin/sh
+
+export LC_MESSAGES=C
+export LANG=C
+
+livetimer=$(date +%s%3N)
+
+[[ -r /usr/local/lib/util-live.sh ]] && source /usr/local/lib/util-live.sh
+
+livetimer=$(get_timer_ms)
+configure_language
+echo "Finished localization: $(elapsed_time_ms ${livetimer})ms" >> /var/log/miladi-live.log
+
+
